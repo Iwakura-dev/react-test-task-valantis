@@ -1,15 +1,14 @@
-import axios, { type AxiosResponse } from "axios";
+import axios from "axios";
 import { API_URL } from "../constants/constants";
-import { TGetProductsId } from "../types/types";
 import { getAuthHeader } from "./getAuthHeader";
 
-export async function fetchProductsIds() {
+export async function fetchProductsWithFilter(filter: string) {
   try {
-    const response: AxiosResponse<TGetProductsId> = await axios.post(
+    const response = await axios.post(
       API_URL,
       {
-        action: "get_ids",
-        params: { offset: 0, limit: 600 },
+        action: "get_fields",
+        params: { field: filter },
       },
       {
         headers: {
@@ -21,7 +20,7 @@ export async function fetchProductsIds() {
     return response.data;
   } catch (error) {
     if (error instanceof Error) {
-      console.error("Error fetching in get ids", error.message);
+      console.error("Error fetching in filter!", error.message);
     }
   }
 }

@@ -1,12 +1,9 @@
 export type TGetProductsId = {
-  result: string[];
+  [key: string]: string[];
 };
-interface IProductsList {
+export interface IProductsList {
   id: string;
   brand?: null | string;
   price: number;
   product: string;
 }
-export type TProductsList = {
-  result: IProductsList[];
-};

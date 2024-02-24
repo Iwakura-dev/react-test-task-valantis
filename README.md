@@ -11,3 +11,9 @@ This project was writting in next techology.
 
 This project involves creating a page with products that are taken from the Valantis API.
 As well as building a page transition and filtering of goods.
+
+## How project is working
+
+```js
+VITE_APP_VALANTIS_API_URL = http://api.valantis.store:40000/
+```
