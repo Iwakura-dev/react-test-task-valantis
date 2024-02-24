@@ -14,6 +14,6 @@ As well as building a page transition and filtering of goods.
 
 ## How project is working
 
-```js
-VITE_APP_VALANTIS_API_URL = http://api.valantis.store:40000/
-```
+- Output 50 products per page with the possibility of page transition (pagination) in both directions.
+- The ability to filter the output using the provided api by name, price and brand
+- If API returns duplicates by id, they should be considered as one product and output only the first one, even if other fields are different. If the API returns an error, you should output the error identifier to the console, if any, and repeat the request.
