@@ -27,7 +27,7 @@ export const ProductsList = () => {
   const maxProductsPage = 50;
 
   useEffect(() => {
-    fetchProductsIds().then((data) => {
+    fetchProductsIds().then((data: any) => {
       if (data) {
         setProductsId(data);
       }
