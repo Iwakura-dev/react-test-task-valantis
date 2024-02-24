@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_URL } from "../constants/constants";
 import { getAuthHeader } from "./getAuthHeader";
 
-export async function fetchProducts(productIds: string[]) {
+export async function fetchProducts(productIds: any) {
   try {
     const response = await axios.post(
       API_URL,

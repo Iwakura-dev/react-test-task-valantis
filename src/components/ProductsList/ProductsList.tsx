@@ -15,7 +15,7 @@ import { ButtonArrow } from "../UI/ButtonArrow";
 import { Cards } from "./Cards/Cards";
 
 export const ProductsList = () => {
-  const [productsId, setProductsId] = useState<string[]>([]);
+  const [productsId, setProductsId] = useState<any[]>([]);
   const [productsList, setProductsList] = useState<IProductsList[] | null>(
     null
   );
