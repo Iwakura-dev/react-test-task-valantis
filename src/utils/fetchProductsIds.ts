@@ -1,24 +1,21 @@
-import axios, { type AxiosResponse } from "axios";
 import { API_URL } from "../constants/constants";
-import { TGetProductsId } from "../types/types";
 import { getAuthHeader } from "./getAuthHeader";
 
 export async function fetchProductsIds() {
   try {
-    const response: AxiosResponse<TGetProductsId> = await axios.post(
-      API_URL,
-      {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "X-Auth": getAuthHeader(),
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
         action: "get_ids",
         params: { offset: 0, limit: 600 },
-      },
-      {
-        headers: {
-          "X-Auth": getAuthHeader(),
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    return response.data;
+      }),
+    });
+    return response.json();
   } catch (error) {
     if (error instanceof Error) {
       console.error("Error fetching in get ids", error.message);
