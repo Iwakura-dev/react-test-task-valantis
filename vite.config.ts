@@ -3,6 +3,6 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: __dirname,
+  base: "/react-test-task-valantis/",
   plugins: [react()],
 });
