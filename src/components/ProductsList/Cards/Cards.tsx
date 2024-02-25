@@ -6,7 +6,7 @@ interface ICardsProps {
   price: number;
   brand: string;
 }
-
+// This components render the cards with the value from the API
 export const Cards: React.FC<ICardsProps> = ({ id, title, price, brand }) => {
   return (
     <div className="backdrop-blur-md shadow-md p-4 rounded-3xl dark:bg-zinc-800">

@@ -1,3 +1,4 @@
+// This components performs the loading function
 export const Skeleton = () => {
   return (
     <div

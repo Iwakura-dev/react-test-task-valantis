@@ -2,6 +2,7 @@ import { ThemeToggle } from "../UI/ThemeToggle";
 
 export function Header() {
   return (
+    // This component render the Header menu
     <div className="shadow-md p-4 backdrop-blur-md">
       <div className="flex justify-between">
         <div>

@@ -1,5 +1,6 @@
 import { API_URL } from "../constants/constants";
 import { getAuthHeader } from "./getAuthHeader";
+// declare function for the call to API and the get id from the API
 
 export async function fetchProductsIds() {
   try {

@@ -3,7 +3,7 @@ import React from "react";
 interface ISelectFilterProps {
   handleFilterProductChange: (value: string) => void;
 }
-
+// This component performs the load function depending on the selected option
 export const SelectFilter: React.FC<ISelectFilterProps> = ({
   handleFilterProductChange,
 }) => {

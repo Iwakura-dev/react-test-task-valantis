@@ -1,5 +1,7 @@
 import { IProductsList } from "../types/types";
 
+// declare functions for the sort in dependencies on select value from the option
+
 export const sortByBrand = (products: IProductsList[]) => {
   return [...products].sort((a, b) => a.brand.localeCompare(b.brand));
 };

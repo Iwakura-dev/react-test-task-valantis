@@ -15,17 +15,24 @@ import { ButtonArrow } from "../UI/ButtonArrow";
 import { Cards } from "./Cards/Cards";
 
 export const ProductsList = () => {
+  // Declare state for the request in API for the get in items and forward to productList
   const [productsId, setProductsId] = useState<any[]>([]);
+  // Declare state in which save the all array our API
   const [productsList, setProductsList] = useState<IProductsList[] | null>(
     null
   );
+  // Declare state for the filter array from API
   const [filterProductItem, setFilterProductItem] = useState<string | null>(
     null
   );
+  // Declare state for the pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
+  // Declare state for the stream in mounted of array our API
   const [productsIsMounted, setProductsIsMounted] = useState<boolean>(true);
+  // Declare variable which render the maximum elements on page
   const maxProductsPage = 50;
 
+  // use useEffect hooks to call the 'fecthProducts' function that calls the API request
   useEffect(() => {
     fetchProductsIds().then((data: any) => {
       if (data) {
@@ -33,7 +40,7 @@ export const ProductsList = () => {
       }
     });
   }, []);
-
+  // use useEffect hooks in which change the mounted and call the function in dependences on the switch-case function
   useEffect(() => {
     setProductsIsMounted(true);
     if (productsId) {
@@ -62,16 +69,19 @@ export const ProductsList = () => {
         .finally(() => setProductsIsMounted(false));
     }
   }, [productsId, filterProductItem]);
-
+  // declare variable for the calculate last index on the products
   const indexOfLastProduct = currentPage * maxProductsPage;
+  // declare variable for the calculate first index on the products
   const indexOfFirstProduct = indexOfLastProduct - maxProductsPage;
+  // declare new variable and the check array, if array is true, then slice this array for the pagination
   const currentProducts = Array.isArray(productsList)
     ? productsList.slice(indexOfFirstProduct, indexOfLastProduct)
     : [];
-
+  // declare function which change the current page
   const handlePagination = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
+  // declare function which change the value in dependencies on value from the select
   const handleFilterProductChange = (value: string): void => {
     setFilterProductItem(value);
   };

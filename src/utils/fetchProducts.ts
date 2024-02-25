@@ -1,6 +1,8 @@
 import { API_URL } from "../constants/constants";
 import { getAuthHeader } from "./getAuthHeader";
 
+// declare function for the call to API and the get items from API
+
 export async function fetchProducts(productIds: any) {
   try {
     const response = await fetch(API_URL, {
